@@ -1,0 +1,484 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Online E-commerce Store</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com.css2?
+                    family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .navbar{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+    nav{
+        flex: 1;
+        text-align: right;
+    }
+    nav ul{
+        display: inline-block;
+        list-style-type: none;
+    }
+    nav ul li{
+        display: inline-block;
+        margin-right: 20px;
+    }
+    a{
+        text-decoration: none;
+        color: #555;
+    }
+    p{
+        color: #555;
+    }
+    .container{
+        max-width: 1400px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .col-2{
+        flex-basis: 50%;
+        min-width: 300px;
+    }
+    .col-2 img{
+        max-width: 100%;
+        padding: 50px 0;
+    }
+    .col-2 h1{
+        font-size: 50px;
+        line-height: 60px;
+        margin: 25px 0;
+    }
+    .btn{
+        display: inline-block;
+        background: #002FF2;
+        color: #fff;
+        padding: 8px 30px;
+        margin: 30px 0;
+        border-radius: 30px;
+    }
+    .header{
+        background: radial-gradient(#CAF9F9, #00FFFF);
+    }
+    .header .row{
+        margin-top: 70px;
+    }
+    .categories{
+        margin: 70px 0;
+    }
+    .col-3{
+        flex-basis: 30%;
+        min-width: 250px;
+        margin-bottom: 30px;
+    }
+    .col-3 img{
+        width: 100%;
+    }
+    .small-container{
+        max-width: 1080px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .col-4{
+        flex-basis: 25%;
+        padding: 10px;
+        min-width: 200px;
+        margin-bottom: 50px;
+        transition: transform 0.5s;
+    }
+    .col-4 img{
+        width: 100%;
+    }
+    
+    .title{
+        text-align: center;
+        margin: 0 auto 80px;
+        position: relative;
+        line-height: 60px;
+        color: #555;
+    }
+    .title::after{
+        content: '';
+        background: #ff523b;
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    h4{
+        color: #555;
+        font-weight: normal;
+    }
+    .col-4 p{
+        font-size: 14px;
+    }
+    .rating .fa{
+        color: #ff523b;
+    }
+    
+    .col-4:hover{
+        transform: translateY(-5px);
+    }
+    
+    /*-------------- Offer --------------*/
+    
+    .offer{
+        background: radial-gradient(#CAF9F9, #00FFFF);
+        margin-top: 80px;
+        padding: 30px 0;
+    }
+    .col-2 .offer-img{
+        padding: 50px;
+    }
+    small{
+        color: #555;
+    }
+    
+    /*-------------- Footer --------------*/
+    
+    .footer{
+        background: #000;
+        color: #8a8a8a;
+        font-size: 15px;
+        padding: 60px 0 20px;
+    }
+    .copyright{
+        text-align: center;
+    }
+    
+</style>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="{% static 'helloworld/image/e.png' %}" width="160px" style="padding-top: 30px;">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                    </ul>
+                </nav>
+                <img src="{% static 'helloworld/image/cart.png' %}" width="30px" height="30px">
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Adding Care<br>To Your PC'S!</h1>
+                    <p>Shopping at it's best</p>
+                    <a href="" class="btn btn-primary ">Explore Now &#8594</a>
+                </div>
+                <div class="col-2">
+                    <img src="{% static 'helloworld/image/image1.png' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------- Products -------------->
+
+    <div class="small-container">
+        <h2 class="title" style="padding-top: 30px;">Products</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>Rs.65,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Rs.625,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>Rs.73,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Rs.23,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>Rs.20,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Rs.10,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>Rs.3,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Rs.37,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>Rs.3,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Rs.37,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>Rs.3,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+
+            </div>
+            <div class="col-4">
+                <img src="{% static 'helloworld/image/product-1.png' %}">
+                <h4>Asus MSI Z690 Ace<br>Gaming Motherboard</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>Rs.37,000</p>
+                <button type="button" class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-------------- Offer -------------->
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="{% static 'helloworld/image/product-1.png' %}">" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Available on this Store</p>
+                    <h1>ASUS RTX 3090 24GB</h1>
+                    <small>The GeForce RTX™ 3090 is a big ferocious GPU (BFGPU) with TITAN class performance. It’s
+                        powered by Ampere—NVIDIA’s 2nd gen RTX architecture—doubling down on ray tracing and AI
+                        performance with enhanced Ray Tracing (RT) Cores, Tensor Cores, and new streaming
+                        multiprocessors. Plus, it features a staggering 24 GB of G6X memory, all to deliver the ultimate
+                        gaming experience.</small>
+                    <br>
+                    <a href="" class="btn btn-primary">Buy Now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-------------- footer -------------->
+
+    <div class="footer">
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'helloworld/image/e.png' %}" width="160px" style="padding-top: 20px;">
+                <h2 style="text-align: center; padding-bottom:10px;color: white; margin: 0px;">Contact us</h2>
+            </div>
+            <br>
+            <!-- <h2 style="text-align: center; padding-bottom:10px;color: white; margin-top: -70px;">Contact us</h2>    -->
+            <section class="mb-4">
+                <div class="row">
+
+
+                    <div class="col-md-9 mb-md-0 mb-5">
+                        <form method="" action="">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <label class="">Your name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <label for="email" class="">Your email</label>
+                                        <input type="text" class="form-control">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="md-form mb-0">
+                                        <label for="subject" class="">Subject</label>
+                                        <input type="text" class="form-control">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="md-form">
+                                        <label for="message">Your message</label>
+                                        <textarea type="text" rows="2" class="form-control md-textarea"></textarea>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="text-center text-md-left">
+                            <a class="btn btn-primary"
+                                style="height: 40px; width: 80px; margin-right: 1000px ;font-size: large;">Send</a>
+                        </div>
+                        <div class="status"></div>
+                    </div>
+                    <!-- Stores Details -->
+                    <div class="col-md-3 text-center">
+                        <ul class="list-unstyled mb-0">
+                            <li><i class="fa fa-envelope  mt-4 fa-2x"></i>
+                                <p>Sialkot, Pakistan</p>
+                            </li>
+
+                            <li><i class="fa fa-phone mt-4 fa-2x"></i>
+                                <p>+923333333333</p>
+                            </li>
+
+                            <li><i class="fa fa-envelope mt-4 fa-2x"></i>
+                                <p>contact@onlineStore.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <p class="copyright">Copyright <a href="https://github.com/AlamBinary01">AlamBinary01</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
